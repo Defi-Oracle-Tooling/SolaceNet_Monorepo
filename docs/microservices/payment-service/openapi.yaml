@@ -1,0 +1,63 @@
+openapi: 3.1.0
+info:
+  title: Payment Service API
+  version: 1.0.0
+paths:
+  /payments:
+    post:
+      summary: Process a payment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PaymentRequest"
+      responses:
+        "200":
+          description: Payment processed successfully
+        "400":
+          description: Bad Request
+        "500":
+          description: Internal Server Error
+  /payments/{id}:
+    get:
+      summary: Retrieve payment details by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Payment details retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PaymentResponse"
+        "404":
+          description: Payment not found
+        "500":
+          description: Internal Server Error
+components:
+  schemas:
+    PaymentRequest:
+      type: object
+      properties:
+        amount:
+          type: number
+        currency:
+          type: string
+        method:
+          type: string
+    PaymentResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        status:
+          type: string
+        amount:
+          type: number
+        currency:
+          type: string

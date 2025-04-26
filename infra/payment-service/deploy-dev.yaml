@@ -1,0 +1,29 @@
+name: Deploy Payment-Service to Dev
+
+on:
+  push:
+    branches:
+      - dev
+    paths:
+      - "docs/microservices/payment-service/**"
+      - "infra/payment-service/**"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Azure CLI
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Deploy to Azure App Service
+        run: |
+          az webapp up \
+            --name payment-service-dev \
+            --resource-group SolaceNet-Dev-RG \
+            --runtime "NODE|18-lts" \
+            --location "East US"

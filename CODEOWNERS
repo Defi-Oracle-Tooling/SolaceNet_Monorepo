@@ -1,0 +1,11 @@
+# CODEOWNERS file for SolaceNet Monorepo
+
+# Define ownership for specific directories and files
+
+/docs/architecture/ @team-architecture
+/docs/microservices/ @team-microservices
+/infra/ @team-infra
+/index.html @team-frontend
+/README.md @team-documentation
+/SECURITY.md @team-security
+/CONTRIBUTING.md @team-documentation

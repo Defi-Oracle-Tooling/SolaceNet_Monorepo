@@ -1,0 +1,31 @@
+name: Build Gateway-Service
+
+on:
+  push:
+    paths:
+      - "docs/microservices/gateway-service/**"
+      - "infra/gateway-service/**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run build
+        run: npm run build
+
+      - name: Archive build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: gateway-service-build
+          path: dist/

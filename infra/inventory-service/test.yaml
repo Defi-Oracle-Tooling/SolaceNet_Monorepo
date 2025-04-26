@@ -1,0 +1,31 @@
+name: Test Inventory-Service
+
+on:
+  pull_request:
+    paths:
+      - "docs/microservices/inventory-service/**"
+      - "infra/inventory-service/**"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v3
+        with:
+          name: inventory-service-test-results
+          path: test-results/

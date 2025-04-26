@@ -1,0 +1,57 @@
+openapi: 3.1.0
+info:
+  title: Inventory Service API
+  version: 1.0.0
+paths:
+  /inventory/{productId}:
+    get:
+      summary: Retrieve inventory details for a product
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Inventory details retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InventoryResponse"
+        "404":
+          description: Product not found
+        "500":
+          description: Internal Server Error
+  /inventory:
+    post:
+      summary: Update inventory stock levels
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/InventoryUpdateRequest"
+      responses:
+        "200":
+          description: Inventory updated successfully
+        "400":
+          description: Bad Request
+        "500":
+          description: Internal Server Error
+components:
+  schemas:
+    InventoryResponse:
+      type: object
+      properties:
+        productId:
+          type: string
+        stock:
+          type: integer
+    InventoryUpdateRequest:
+      type: object
+      properties:
+        productId:
+          type: string
+        stock:
+          type: integer
