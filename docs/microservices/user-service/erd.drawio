@@ -10,8 +10,12 @@
         <mxCell id="3" value="Preferences" style="shape=rectangle" vertex="1" parent="1">
           <mxGeometry x="200" y="20" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="4" edge="1" parent="1" source="2" target="3">
+        <mxCell id="4" edge="1" parent="1" source="2" target="3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#000000;strokeWidth=2;">
           <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- Annotations -->
+        <mxCell id="5" value="User has preferences" style="text;strokeColor=none;fillColor=none;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="100" y="50" width="150" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

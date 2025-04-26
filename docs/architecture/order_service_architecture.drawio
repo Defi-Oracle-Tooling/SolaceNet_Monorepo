@@ -1,20 +1,22 @@
 <mxfile>
-  <diagram name="Audit-Service ERD">
+  <diagram name="Order-Service Architecture">
     <mxGraphModel>
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="2" value="AuditLog" style="shape=rectangle" vertex="1" parent="1">
+        <!-- Components -->
+        <mxCell id="2" value="Order" style="shape=rectangle" vertex="1" parent="1">
           <mxGeometry x="20" y="20" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="3" value="User" style="shape=rectangle" vertex="1" parent="1">
+        <mxCell id="3" value="OrderItem" style="shape=rectangle" vertex="1" parent="1">
           <mxGeometry x="200" y="20" width="120" height="60" as="geometry" />
         </mxCell>
+        <!-- Connectors -->
         <mxCell id="4" edge="1" parent="1" source="2" target="3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#000000;strokeWidth=2;">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <!-- Annotations -->
-        <mxCell id="5" value="AuditLog is associated with a user" style="text;strokeColor=none;fillColor=none;fontSize=12;" vertex="1" parent="1">
+        <mxCell id="5" value="Order contains multiple items" style="text;strokeColor=none;fillColor=none;fontSize=12;" vertex="1" parent="1">
           <mxGeometry x="100" y="50" width="200" height="20" as="geometry" />
         </mxCell>
       </root>
