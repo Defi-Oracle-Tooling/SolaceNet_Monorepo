@@ -1,5 +1,8 @@
 {
-    "recommendations": [
-        "openai.chatgpt"
-    ]
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "redhat.vscode-yaml",
+    "hediet.vscode-drawio",
+    "streetsidesoftware.code-spell-checker"
+  ]
 }

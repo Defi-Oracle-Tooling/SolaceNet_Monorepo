@@ -1,0 +1,41 @@
+openapi: 3.1.0
+info:
+  title: Audit Service API
+  version: 1.0.0
+paths:
+  /audit/logs:
+    get:
+      summary: Retrieve audit logs
+      responses:
+        "200":
+          description: List of audit logs
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/AuditLog"
+        "400":
+          description: Bad Request
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+        "500":
+          description: Internal Server Error
+components:
+  schemas:
+    AuditLog:
+      type: object
+      properties:
+        id:
+          type: string
+        action:
+          type: string
+        actor:
+          type: string
+        timestamp:
+          type: string
+          format: date-time
+        resource:
+          type: string

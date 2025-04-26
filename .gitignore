@@ -3,3 +3,5 @@
 node_modules/
 bundle.zip
 .env
+.DS_Store
+.vscode/
