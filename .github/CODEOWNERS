@@ -1,0 +1,10 @@
+# CODEOWNERS for SolaceNet Monorepo
+
+/docs/architecture/ @YourGitHubUsername
+/docs/microservices/ @YourGitHubUsername
+/docs/ @YourGitHubUsername
+/infra/ @DevOpsLeadUsername
+/index.html @FrontendLeadUsername
+/generate_bundle.sh @AutomationLeadUsername
+/package_bundle.sh @AutomationLeadUsername
+.vscode/ @YourGitHubUsername
